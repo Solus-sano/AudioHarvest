@@ -39,11 +39,11 @@ def get_audio_url(cid, bvid):
     audio_url = play_json["data"]["dash"]["audio"][0]["baseUrl"]
     return audio_url
 
-def convert_acc_to_m4a(input_acc_path, output_m4a_path):
+def convert_aac_to_m4a(input_acc_path, output_m4a_path):
     command = [
         'ffmpeg',
-        '-i', input_acc_path,  # 输入文件路径
-        output_m4a_path  # 输出文件路径
+        '-i', input_acc_path,  
+        output_m4a_path  
     ]
     
     try:
