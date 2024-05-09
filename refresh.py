@@ -7,6 +7,7 @@ if __name__ == "__main__":
     cfg = args.parse_args()
     
     data = pd.read_csv(cfg.source_file).values
+    print("refreshing...")
     for item in tqdm(data):
         get_song(
             name=item[0],
