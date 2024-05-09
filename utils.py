@@ -40,14 +40,19 @@ def get_audio_url(cid, bvid):
     return audio_url
 
 def convert_aac_to_m4a(input_acc_path, output_m4a_path):
-    command = [
+    command_1 = [
         'ffmpeg',
         '-i', input_acc_path,  
         output_m4a_path  
     ]
+    command_2 = [
+        'rm',
+        input_acc_path
+    ]
     
     try:
-        subprocess.run(command, check=True)
+        subprocess.run(command_1, check=True)
         print(f'转换成功: {input_acc_path} -> {output_m4a_path}')
+        subprocess.run(command_2, check=True)
     except subprocess.CalledProcessError:
         print('转换失败')
